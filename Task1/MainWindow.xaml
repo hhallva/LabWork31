@@ -30,7 +30,7 @@
         <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="2" Grid.Column="1" MaxLength="10"/>
         
         <Label Content="О себе" Grid.Row="3" />
-        <TextBox  x:Name="InfoTextBox"  Grid.Row="3" Grid.Column="1" AcceptsReturn="True" />
+        <TextBox  x:Name="InfoTextBox"  Grid.Row="3" Grid.Column="1" AcceptsReturn="True" Height="60" />
 
         <Label Content="День рождения" Grid.Row="4" />
         <DatePicker x:Name="BirthdayDatePicker" Grid.Row="4"  Grid.Column="1" DisplayDateStart="01.01.1900" SelectedDateChanged="DatePicker_SelectedDateChanged" />
