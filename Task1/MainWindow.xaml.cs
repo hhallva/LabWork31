@@ -24,7 +24,7 @@ namespace Task1
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordBox.Password == ConfirmPasswordBox.Password && LoginTextBox.Text != "" && InfoTextBox.Text != "") 
+            if (PasswordBox.Password == ConfirmPasswordBox.Password && LoginTextBox.Text != String.Empty && InfoTextBox.Text != String.Empty) 
             {
                 string login = LoginTextBox.Text;
                 MessageBox.Show($"{login}, вы зарегистрированы");

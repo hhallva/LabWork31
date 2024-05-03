@@ -20,5 +20,17 @@ namespace Task4
         {
             InitializeComponent();
         }
+
+        private void PercentSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            PercentLabel.Content = $"Процент: {Math.Round(PercentSlider.Value, 2)} %";
+            ResultLabel.Content = $"Результат {CostSlider.Value * PercentSlider.Value / 100:C}";
+        }
+
+        private void CostSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            CostLabel.Content = $"Цена: {Math.Round(CostSlider.Value, 2)} Р.";
+            ResultLabel.Content = $"Результат: {CostSlider.Value * PercentSlider.Value / 100:C}";
+        }
     }
 }
