@@ -1,13 +1,4 @@
-﻿using System.Text;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Task1
 {
@@ -20,11 +11,11 @@ namespace Task1
         {
             InitializeComponent();
             BirthdayDatePicker.DisplayDateEnd = DateTime.Now;
-        } 
+        }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordBox.Password == ConfirmPasswordBox.Password && LoginTextBox.Text != String.Empty && InfoTextBox.Text != String.Empty) 
+            if (PasswordBox.Password == ConfirmPasswordBox.Password && LoginTextBox.Text != String.Empty && InfoTextBox.Text != String.Empty)
             {
                 string login = LoginTextBox.Text;
                 MessageBox.Show($"{login}, вы зарегистрированы");
@@ -33,7 +24,15 @@ namespace Task1
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            AgeLabel.Content =$"Возраст: { DateTime.Now.Year - BirthdayDatePicker.DisplayDate.Year}";
+            DateTime birthdayDate = (DateTime)BirthdayDatePicker.SelectedDate;
+            DateTime nowDate = DateTime.Now.Date;
+
+            int age = nowDate.Year - birthdayDate.Year;
+            if (nowDate.Month < birthdayDate.Month || (nowDate.Month == birthdayDate.Month && nowDate.Day < birthdayDate.Day))
+            {
+                age--;
+            }
+            AgeLabel.Content =$"Возраст: {age}";
         }
     }
 }
